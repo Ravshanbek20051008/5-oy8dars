@@ -1,9 +1,11 @@
 function createUserCard(card) {
+  width:;
   return `
     <div id="card">
-      <p>Country:${card.country}</p>
-      <p>Code:${card.code}</p>
-      <p>ID:${card.id}</p>
+    <img src=${card.flags.png} alt=${card.name.common}width:50px; heigh:50px; >
+    <p>Country:${card.name.common}</p>
+      <p>capital:${card.capital}</p>
+      
     </div>
   `;
 }
@@ -12,7 +14,7 @@ const wrapper = document.querySelector("#wrapper");
 const loader = document.querySelector("#loader");
 
 document.addEventListener("DOMContentLoaded", function () {
-  fetch("https://cars-pagination.onrender.com/all-countries/")
+  fetch("https://restcountries.com/v3.1/all")
     .then((response) => {
       if (response.status == 200) {
         return response.json();
@@ -24,6 +26,7 @@ document.addEventListener("DOMContentLoaded", function () {
         data.forEach(function (user) {
           let card = createUserCard(user);
           wrapper.innerHTML += card;
+          console.log(user.flag);
         });
       }
     })
