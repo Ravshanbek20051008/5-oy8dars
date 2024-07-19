@@ -2,7 +2,7 @@ function createUserCard(card) {
   width:;
   return `
     <div id="card">
-    <img src=${card.flags.png} alt=${card.name.common}width:50px; heigh:50px; >
+    <img src=${card.flags.png} alt=${card.name.common} >
     <p>Country:${card.name.common}</p>
       <p>capital:${card.capital}</p>
       
