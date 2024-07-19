@@ -1,5 +1,4 @@
 function createUserCard(card) {
-  width:;
   return `
     <div id="card">
     <img src=${card.flags.png} alt=${card.name.common} >
